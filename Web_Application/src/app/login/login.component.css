@@ -1,0 +1,11 @@
+section{
+    background-color: #EDF2FB;
+}
+.col-12{
+    background-color:white;
+    border: 3px solid #141b56;
+    border-radius: 15px;
+}
+.Login{
+    letter-spacing:4px;
+}

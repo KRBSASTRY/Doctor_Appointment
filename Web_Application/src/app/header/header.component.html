@@ -1,0 +1,44 @@
+<!--Navbar-->
+<section>
+    <nav class="navbar navbar-expand-lg navbar-dark shadow-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand logo fw-bold text-white fst-italic" id="logo" routerLink="home">Medi Care<i
+                    class="fa-solid fa-hand-holding-medical fa-xl fa-fade text-warning fw-bold"
+                    style="--fa-animation-duration: 1.8s"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav text-center ms-auto gap-3">
+                    <li class="nav-item hover-underline-animation">
+                        <a class="nav-link " routerLink="home" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">Home</a>
+                    </li>
+                    <li class="nav-item hover-underline-animation">
+                        <a class="nav-link " routerLink="userdashboard" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">Find doctor</a>
+                    </li>
+                    <li class="nav-item hover-underline-animation">
+                        <a class="nav-link " routerLink="plans" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">Subscriptions
+                            <i class="fa-solid fa-bell text-warning fa-shake ps-1 fa-lg"
+                                style="--fa-animation-duration: 2s"></i></a>
+                    </li>
+                    <li class="nav-item hover-underline-animation">
+                        <a class="nav-link " routerLink="aboutus" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">About us</a>
+                    </li>
+                    <li class="nav-item hover-underline-animation" *ngIf="userServiceObj.loginStatus == false">
+                        <a class="nav-link " routerLink="login" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">Login </a>
+                    </li>
+                    <li class="nav-item hover-underline-animation"  *ngIf="userServiceObj.loginStatus == true">
+                        <a class="nav-link " routerLink="login" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show" (click)="logout()">Logout </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+</section>

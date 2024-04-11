@@ -1,0 +1,54 @@
+
+<section class="vh-100 ">
+    <div class="container py-5 h-100  ">
+        <div class="row d-flex align-items-center justify-content-center h-100 px-2 ">
+            <div class="col-12 col-md-7 col-lg-5 col-xl-5 shadow-lg p-4 " data-aos="fade-right" data-aos-delay="500">
+                <h1 class="text-center fw-bold Login ">LOGIN</h1>
+                <form [formGroup]="userLogin" #ref="ngForm" (ngSubmit)="ref.valid && loginFormSubmit()">
+                    <!-- user / doctor -->
+                    <div class="d-flex justify-content-center">
+                        <div class="form-check form-check-inline " *ngFor="let type of userTypes">
+                            <div>
+                                <input type="radio" name="userType" id="{{ type }}" value="{{ type }}"
+                                    class="form-check-input border border-3 border-primary"
+                                    formControlName="userType" />
+                                <label for="{{ type }}" class="form-check-label text-capitalize">{{type}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- username input -->
+                    <div class="form-floating mb-4">
+                        <input type="text" id="Username" class="form-control" placeholder="Username"
+                            formControlName="username">
+                        <label class="form-label" for="Username">Username</label>
+                    </div>
+
+                    <!-- Password input -->
+                    <div class="form-floating mb-4">
+                        <input type="Password" id="Password" class="form-control" placeholder="Password"
+                            formControlName="password">
+                        <label class="form-label" for="Password">Password</label>
+                    </div>
+
+                    <!-- Submit button -->
+                    <button type="submit" class="btn btn-primary  d-block w-100 mx-auto">Login</button>
+
+                    <div class="divider d-flex justify-content-center my-2">
+                        <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+                    </div>
+                    <div>
+                        <p class="text-center mx-3 fw-bold">Are You a New User ? Click here <i
+                                class="far fa-hand-point-down text-dark fa-bounce"></i></p>
+                        <button type="submit" class="btn btn-primary  d-block w-100 mx-auto"
+                            (click)="navigateToSignUp()">Signup as User</button>
+                        <p class="text-center mx-3 fw-bold">Are You a Doctor looking to join us ? Click here <i
+                                class="far fa-hand-point-down text-dark fa-bounce"></i></p>
+                        <button type="submit" class="btn btn-primary  d-block w-100 mx-auto"
+                            (click)="navigateToSignUpDoctor()">Signup as Doctor</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

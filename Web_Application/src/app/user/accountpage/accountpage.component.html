@@ -1,0 +1,48 @@
+<div class="appointment-buttons">
+    <button class="appointment-button" (click)="toggleView('upcoming')">Upcoming Appointments</button>
+    <button class="appointment-button" (click)="toggleView('history')">Appointment History</button>
+    <button class="appointment-button" (click)="bookAppointment()">Book Appointment</button> <!-- New button -->
+</div>
+<div *ngIf="showUpcomingAppointments" class="upcoming-appointments">
+    <h2>Upcoming Appointments</h2>
+    <table class="appointment-table">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Appointment Time</th>
+                <th>Date</th>
+                <th>Doctor Specialization</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of upcomingAppointmentsData" class="appointment-row">
+                <td>{{ appointment.doctorName }}</td>
+                <td>{{ appointment.appointmentTime }}</td>
+                <td>{{ appointment.appointmentDate }}</td>
+                <td>{{ appointment.doctorSpecialization }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div *ngIf="!showUpcomingAppointments" class="appointment-history">
+    <h2>Appointment History</h2>
+    <table class="appointment-table">
+        <thead>
+            <tr>
+                <th>Doctor Name</th>
+                <th>Appointment Time</th>
+                <th>Date</th>
+                <th>Doctor Specialization</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let appointment of appointmentHistoryData" class="appointment-row">
+                <td>{{ appointment.doctorName }}</td>
+                <td>{{ appointment.appointmentTime }}</td>
+                <td>{{ appointment.AppointmentDate }}</td>
+                <td>{{ appointment.doctorSpecialization }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

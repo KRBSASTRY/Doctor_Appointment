@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4">
+
+    <TextView
+        android:id="@+id/patientsLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Patient’s Login"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:hint="User Name"
+        android:textSize="24sp"
+        android:layout_marginTop="200dp"
+        android:background="#D9D9D9"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="221dp"
+        android:layout_height="52dp"
+        android:hint="Password"
+        android:textSize="24sp"
+        android:layout_marginTop="300dp"
+        android:background="#D9D9D9"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Remember"
+        android:textSize="24sp"
+        android:layout_marginTop="350dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="LOGIN"
+        android:layout_marginTop="400dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGNUP"
+        android:layout_marginTop="450dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <Button
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FORGOT PASSWORD"
+        android:layout_marginTop="550dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+</FrameLayout>

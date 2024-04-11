@@ -1,0 +1,283 @@
+<!-- <div class="container d-flex justify-content-center">
+    <form [formGroup]="userSignup" (ngSubmit)="ref.valid && signupSubmit()" #ref="ngForm" class="w-75 ">
+
+        <div class="container signupHeading">
+            SIGN UP HERE
+        </div>
+
+
+        <div class="mb-3">
+            <label for="name">Give your Name: </label>
+            <input type="text" name="name" id="name" formControlName="name" class="form-control" autocomplete="off">
+
+            
+            <div>
+                <div *ngIf="name.invalid && name.dirty ||name.touched ||ref.submitted">
+                    <p *ngIf="name.errors?.['required']" class="validation"> *Name is required</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="username">Give your Username: </label>
+            <input type="text" name="username" id="username" formControlName="username" class="form-control"
+                autocomplete="off">
+
+           
+            <div>
+                <div *ngIf="username.invalid && username.dirty ||username.touched ||ref.submitted">
+                    <p *ngIf="username.errors?.['required']" class="validation"> *Username is required</p>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="password">Give your password: </label>
+            <input type="text" name="password" id="password" formControlName="password" class="form-control"
+                autocomplete="off">
+
+           
+            <div>
+                <div *ngIf="password.invalid && password.dirty ||password.touched ||ref.submitted">
+                    <p *ngIf="password.errors?.['required']" class="validation"> *Password is required</p>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="mb-3">
+            <label for="email">Give your email id: </label>
+            <input type="text" name="email" id="email" formControlName="email" class="form-control" autocomplete="off">
+
+         
+            <div>
+                <div *ngIf="email.invalid && email.dirty ||email.touched ||ref.submitted">
+                    <p *ngIf="email.errors?.['required']" class="validation"> *email is required</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="city">Give your city: </label>
+            <input type="text" name="city" id="city" formControlName="city" class="form-control" autocomplete="off">
+            
+            <div>
+                <div *ngIf="city.invalid && city.dirty ||city.touched ||ref.submitted">
+                    <p *ngIf="city.errors?.['required']" class="validation"> *city is required</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="age">Give your age: </label>
+            <input type="text" name="age" id="age" formControlName="age" class="form-control" autocomplete="off">
+            
+            <div>
+                <div *ngIf="age.invalid && age.dirty ||age.touched ||ref.submitted">
+                    <p *ngIf="age.errors?.['required']" class="validation"> *age is required</p>
+
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="phoneno">Give your Phone number: </label>
+            <input type="text" name="phoneno" id="phoneno" formControlName="phoneno" class="form-control"
+                autocomplete="off">
+            
+            <div>
+                <div *ngIf="phoneno.invalid && phoneno.dirty ||phoneno.touched ||ref.submitted">
+                    <p *ngIf="phoneno.errors?.['required']" class="validation"> *phonenumber is required</p>
+                   
+                </div>
+            </div>
+        </div>
+        <div class="bt">
+            <button class="btn " type="submit">
+                SignUp
+            </button>
+        </div>
+
+
+
+    </form>
+</div>
+ -->
+<section class="main">
+    <div class="container py-5 ">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7 "data-aos="fade-up" data-aos-delay="500">
+                <div class="border-radius shadow-lg ">
+                    <div class="p-4 p-md-5">
+                        <h1 class="mb-4 pb-2 pb-md-0 text-center fw-bold signup">SIGNUP</h1>
+                        <form [formGroup]="userSignup" #ref="ngForm" (ngSubmit)="ref.valid && signupSubmit()">
+
+                            <div class="row">
+                                <!-- Name -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <label class="form-label" for="name">Name</label>
+                                    <input type="text" id="name" class="form-control" formControlName="name" />
+                                    <div>
+                                        <div *ngIf="name.invalid && name.dirty ||name.touched ||ref.submitted">
+                                            <p *ngIf="name.errors?.['required']" class="validation"> *Name is
+                                                required</p>
+    
+                                        </div>
+                                    </div>
+                                </div>
+
+                               
+                                <!-- Age -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div>
+                                        <label class="form-label" for="age">Age</label>
+                                        <input type="number" id="age" class="form-control " formControlName="age" />
+                                        <div>
+                                            <div *ngIf="age.invalid && age.dirty ||age.touched ||ref.submitted">
+                                                <p *ngIf="age.errors?.['required']" class="validation"> *Age is
+                                                    required</p>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Username -->
+                                <div class="col-md-6 mb-4">
+                                    <div>
+                                        <label class="form-label" for="username">Username</label>
+                                        <input type="text" id="username" class="form-control"
+                                            formControlName="username" />
+                                            <div>
+                                                <div *ngIf="username.invalid && username.dirty ||username.touched ||ref.submitted">
+                                                    <p *ngIf="username.errors?.['required']" class="validation"> *Username is
+                                                        required</p>
+            
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Password -->
+                                <div class="col-md-6 mb-4">
+                                    <div>
+                                        <label class="form-label" for="password">Password</label>
+                                        <input type="password" id="password" class="form-control"
+                                            formControlName="password" />
+                                            <div>
+                                                <div *ngIf="password.invalid && password.dirty ||password.touched ||ref.submitted">
+                                                    <p *ngIf="password.errors?.['required']" class="validation"> *Password is
+                                                        required</p>
+            
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!--Email -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div>
+                                        <label class="form-label" for="email">Email</label>
+                                        <input type="email" id="email" class="form-control "
+                                            formControlName="email" />
+                                            <div>
+                                                <div *ngIf="email.invalid && email.dirty ||email.touched ||ref.submitted">
+                                                    <p *ngIf="email.errors?.['required']" class="validation"> *Email is
+                                                        required</p>
+            
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                                <!--Phone Number -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <div>
+                                        <label class="form-label" for="phoneno">Contact Number</label>
+                                        <input type="tel" id="phoneno" class="form-control "
+                                            formControlName="phoneno" />
+                                            <div>
+                                                <div *ngIf="phoneno.invalid && phoneno.dirty ||phoneno.touched ||ref.submitted">
+                                                    <p *ngIf="phoneno.errors?.['required']" class="validation"> *PhoneNumber is
+                                                        required</p>
+            
+                                                </div>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <!-- city -->
+                                <div class="col-12">
+                                    <div>
+                                        <label class="form-label" for="city">City</label>
+                                        <input type="text" id="city" class="form-control " formControlName="city" />
+                                        <div>
+                                            <div *ngIf="city.invalid && city.dirty ||city.touched ||ref.submitted">
+                                                <p *ngIf="city.errors?.['required']" class="validation"> *City is
+                                                    required</p>
+        
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <!-- Blood Pressure -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <label class="form-label" for="bp">Blood Pressure</label>
+                                    <input type="text" id="bp" class="form-control" formControlName="bp" />
+                                    <div *ngIf="bp.invalid && bp.dirty || bp.touched || ref.submitted">
+                                        <p *ngIf="bp.errors?.['required']" class="validation">*Blood Pressure is required</p>
+                                    </div>
+                                </div>
+                            
+                                <!-- Diabetes -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <label class="form-label" for="diabetes">Diabetes</label>
+                                    <input type="text" id="diabetes" class="form-control" formControlName="diabetes" />
+                                    <div *ngIf="diabetes.invalid && diabetes.dirty || diabetes.touched || ref.submitted">
+                                        <p *ngIf="diabetes.errors?.['required']" class="validation">*Diabetes is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <!-- Height -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <label class="form-label" for="height">Height</label>
+                                    <input type="text" id="height" class="form-control" formControlName="height" />
+                                    <div *ngIf="height.invalid && height.dirty || height.touched || ref.submitted">
+                                        <p *ngIf="height.errors?.['required']" class="validation">*Height is required</p>
+                                    </div>
+                                </div>
+                            
+                                <!-- Weight -->
+                                <div class="col-md-6 mb-4 pb-2">
+                                    <label class="form-label" for="weight">Weight</label>
+                                    <input type="text" id="weight" class="form-control" formControlName="weight" />
+                                    <div *ngIf="weight.invalid && weight.dirty || weight.touched || ref.submitted">
+                                        <p *ngIf="weight.errors?.['required']" class="validation">*Weight is required</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- submit-->
+                            <div class="mt-4 pt-2 d-flex justify-content-center gap-3">
+                                <button type="submit" class="btn btn-primary w-25">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

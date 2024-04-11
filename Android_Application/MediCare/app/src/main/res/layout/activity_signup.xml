@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Signup"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame"
+    android:background="#FFF9C4">
+
+<!-- RAM MEDICAL APPLICATION Header -->
+<TextView
+    android:id="@+id/tvRamMedicalApplication"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="MEDI CARE"
+    android:textSize="32sp"
+    android:textColor="#000000"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"/>
+<TextView
+    android:id="@+id/tvSignUpHeader"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/tvRamMedicalApplication"
+    android:text="SIGN UP"
+    android:textSize="24sp"
+    android:textColor="#000000"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="10dp"/>
+
+<!-- Enter Name -->
+<EditText
+    android:id="@+id/etEnterName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Name"
+    android:layout_below="@id/tvSignUpHeader"
+    android:layout_marginTop="20dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"/>
+
+<!-- Enter Email -->
+<EditText
+    android:id="@+id/etEnterEmail"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Email"
+    android:layout_below="@id/etEnterName"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"/>
+
+<!-- Enter Phone Number -->
+<EditText
+    android:id="@+id/etEnterPhoneNumber"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Phone No."
+    android:layout_below="@id/etEnterEmail"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"/>
+
+<!-- Enter Username -->
+<EditText
+    android:id="@+id/etEnterUserName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter User Name"
+    android:layout_below="@id/etEnterPhoneNumber"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"/>
+
+<!-- Enter Password -->
+<EditText
+    android:id="@+id/etEnterPassword"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:hint="Enter Password"
+    android:layout_below="@id/etEnterUserName"
+    android:layout_marginTop="10dp"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:inputType="textPassword"/>
+
+<!-- Register Button -->
+<Button
+    android:id="@+id/btnRegister"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="REGISTER"
+    android:layout_below="@id/etEnterPassword"
+    android:layout_centerHorizontal="true"
+    android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

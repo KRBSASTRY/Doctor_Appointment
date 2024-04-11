@@ -1,0 +1,9 @@
+<p class="display-1 text-center">Appointment Details</p>
+<div class="card" *ngFor="let v of appointmentDetails">
+    <div class="card-body">
+        <div class="card-title">DOCTOR NAME: {{v.doctorname}}</div>
+        <div class="card-title">FEE: {{v.consultationFee}}</div>
+        <div class="card-title">DATE: {{v.date}}</div>
+        <div class="card-title">TIME: {{v.timmings}}</div>
+    </div>
+</div>

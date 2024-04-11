@@ -1,0 +1,4 @@
+-- user: admin
+-- password: sameer123
+-- server address -> database-2.cf6ggqy66qxa.ap-south-1.rds.amazonaws.com
+-- db : medicare

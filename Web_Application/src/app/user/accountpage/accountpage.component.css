@@ -1,0 +1,106 @@
+/* Toggle Buttons */
+.appointment-buttons {
+    display: flex; /* Use Flexbox */
+    justify-content: center; /* Horizontally center the buttons */
+    align-items: center; /* Vertically center the buttons */
+    margin-bottom: 20px; /* Adjust spacing between buttons and content */
+    margin-top: 20px;
+}
+
+.appointment-button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.appointment-button:hover {
+    background-color: #0056b3;
+}
+
+/* Buttons */
+.appointment-button {
+    margin-right: 10px; /* Adjust spacing between buttons */
+}
+  
+/* Table */
+.appointment-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+  
+.appointment-table th,
+.appointment-table td {
+    padding: 8px;
+    border: 1px solid #dee2e6;
+    margin-top: 100px;
+}
+  
+.appointment-table th {
+    margin-top: 100px;
+    background-color: #f8f9fa;
+
+}
+  
+/* Alternate row colors */
+.appointment-table tbody tr:nth-child(odd) {
+    background-color: #f2f2f2;
+}
+  
+/* Container */
+.container {
+    margin-top: 50px; /* Adjust top margin */
+}
+  
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  
+.modal-dialog {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+}
+  
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+  
+.modal-body {
+    text-align: center;
+}
+  
+.modal-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+  
+.modal-footer button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+  
+.modal-footer button:hover {
+    background-color: #0056b3;
+}
+
+.h2 {
+    margin-bottom: 10px; /* Add gap after the text Upcoming Appointments */
+}

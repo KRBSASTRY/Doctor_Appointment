@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DoctorDashboard"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame"
+    android:background="#FFF9C4">
+
+<!-- Person Image Placeholder -->
+<ImageView
+    android:id="@+id/person5"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="20dp"
+    android:layout_alignParentRight="true"
+    android:src="@drawable/avatar_1"
+    android:scaleType="fitXY"/>
+
+<!-- RAM MEDICAL APPLICATION Text -->
+<TextView
+    android:id="@+id/ramMedicalApplication"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:text="MEDI CARE"
+    android:textSize="32sp"
+    android:textColor="#000000" />
+
+
+
+<!-- Dr.Name Text -->
+<TextView
+    android:id="@+id/drName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/person5"
+    android:layout_marginTop="8dp"
+    android:layout_alignParentEnd="true"
+    android:text="Dr.Name"
+    android:textSize="24sp"
+    android:textColor="#000000" />
+
+<!-- Schedule Button Placeholder -->
+<Button
+    android:id="@+id/schedule"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/ramMedicalApplication"
+    android:layout_marginTop="50dp"
+    android:text="SCHEDULE"
+    android:textSize="10dp"
+    android:background="@android:color/holo_blue_light" />
+
+<Button
+    android:id="@+id/HISTORY"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/schedule"
+    android:layout_marginTop="100dp"
+    android:layout_marginLeft="10dp"
+    android:text="HISTORY"
+    android:background="@android:color/holo_red_light" />
+<TextView
+    android:id="@+id/id"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="200dp"
+    android:layout_marginLeft="30dp"
+    android:background="#D9D9D9"
+    android:text="  ID  "
+    ></TextView>
+
+
+<TextView
+    android:id="@+id/patient_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="200dp"
+    android:layout_marginLeft="100dp"
+    android:text="  Patient  Name  "
+    android:background="#D9D9D9"
+    ></TextView>
+
+<TextView
+    android:id="@+id/date"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="200dp"
+    android:layout_marginLeft="180dp"
+    android:text="  Date and Time  "
+    android:background="#D9D9D9"
+    ></TextView>
+
+<!-- Approve Button Placeholder -->
+<Button
+    android:id="@+id/approve"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_toRightOf="@id/date"
+    android:layout_marginTop="200dp"
+    android:layout_centerHorizontal="true"
+    android:text="APPROVE"
+
+    />
+
+<!-- Deny Button Placeholder -->
+<Button
+    android:id="@+id/deny"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/approve"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:text="DENY"
+    android:background="@android:color/holo_red_light" />
+
+
+</RelativeLayout>

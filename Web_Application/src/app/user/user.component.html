@@ -1,0 +1,111 @@
+<!-- select for city -->
+<div class="row">
+    <div class="col">
+        <select name="city" id="city" class="form-select" value="city" (change)="getCity($event)">
+            <option *ngFor="let city1 of city" value={{city1}}>{{city1}}</option>
+        </select>
+    </div>
+
+    
+    <!-- select for specialization -->
+
+    <div class="col ">
+        <select name="specialization" id="specialization" class="form-select" value="specialization"
+            (change)="getDataAccSpec($event)">
+            <option *ngFor="let spec of specialization" value={{spec}}>{{spec}}</option>
+        </select>
+    </div>
+</div>
+
+<div class="container container1">
+    <div class="card h-100 w-100 mx-auto d-block mt-3" *ngFor="let v of finalDoctors[0]">
+        <div class="row row-cols-1 row-cols-sm-1 row-cols-md-3 row-cols-lg-3">
+            <div class="col my-auto">
+                <img src="{{v.imgUrl}}" class=" img d-block mx-auto card-img m-3 "
+                    style="max-height: 100px;max-width: 100px;" alt="">
+            </div>
+            <div class="col">
+                <div class="card-body my-auto">
+                    <h5><span class="doctorname">Dr.{{v.name}}</span></h5>
+                    <h5><span class="details">{{v.specialization}}</span></h5>
+                    <h5><span class="details">{{v.experience}} years experience overall </span></h5>
+                    <h5>{{v.city}}</h5>
+                    <h5><span class="details"><img
+                                src="https://img.icons8.com/material-sharp/24/000000/rupee.png" />{{v.consultationFee}}</span>
+                        Consulatation fee at clinic</h5>
+                </div>
+            </div>
+            <div class="col card-body">
+                <button class="btn w-75 mb-4 d-block mx-auto btn-outline-light" data-bs-toggle="modal"
+                    data-bs-target="#modal" (click)="goToModal(v.username)">Book Appointment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container container2">
+    <div class="card h-100 mt-3" *ngFor="let v of finalDoctors[0]">
+        <div class="row g-0">
+            <div class="col">
+                <img src="{{v.imgUrl}}" class="my-auto m-4 card-img img" style="max-height: 200px;max-width: 200px;"
+                    alt="">
+            </div>
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="card-body my-auto">
+                    <h5><span class="doctorname">Dr{{v.name}}</span></h5>
+                    <h5><span class="details">{{v.specialization}}</span></h5>
+                    <h5><span class="details">{{v.experience}} years experience overall </span></h5>
+                    <h5>{{v.city}}</h5>
+                    <h5><span class="details"><img
+                                src="https://img.icons8.com/material-sharp/24/000000/rupee.png" />{{v.consultationFee}}
+                            Consulatation fee at clinic</span></h5>
+                </div>
+            </div>
+            <div class="col d-flex justify-content-end align-items-end m-3">
+                <button class="btn book btn-outline-light" (click)="goToModal(v.username)" data-bs-toggle="modal"
+                    data-bs-target="#modal">Book Appointment</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="modal " id="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header  text-center">
+                <h5 class="modal-title">Book Appointment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body text-center" *ngFor="let x of appointmentDataObj">
+                <img class="d-block mx-auto docimg w-50" src="{{x.imgUrl}}" alt="">
+                <p>Name: <span>{{x.name}}</span></p>
+                <p>Specialization: <span>{{x.specialization}}</span></p>
+                <p>Consulatation Fee: <span>{{x.consultationFee}}</span></p>
+                <form action="" [formGroup]="appointmentForm">
+                    <div>
+                        <label for="date" class="form-label">Date of Appointment:</label>
+                        <input type="date" class="form-control" style="border-radius: 10px;" id="date"
+                            formControlName="date">
+                    </div>
+                    <div>
+                        <label for="age" class="form-label">Timings</label>
+                        <select class="form-select" style="border-radius: 10px;" formControlName="timmings">
+                            <option selected>Select Timmings</option>
+                            <option value="9 AM">9 AM</option>
+                            <option value="11 AM">11 AM</option>
+                            <option value="2 PM">2 PM</option>
+                        </select>
+                    </div>
+                    <button type="button" (click)="onSubmit()" class="btn btn-success d-block mx-auto mt-3 "
+                        (click)="checkLogin()" data-bs-dismiss="modal">Confirm and Pay</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
