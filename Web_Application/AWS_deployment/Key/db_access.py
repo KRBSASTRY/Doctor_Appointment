@@ -6,7 +6,7 @@ import mysql.connector
 #               aws_secret_access_key = secret_access_key)
 dynamo_client  =  boto3.resource(service_name = 'dynamodb',region_name = 'us-east-2')
 appointment_history_table=dynamo_client.Table("Appointments_History")
-patients_record_table=dynamo_client.Table("Patient_Records")
+patients_record_table=dynamo_client.Table("Patients_Records")
 
 # Initialize MySQL connection
 conn = mysql.connector.connect(

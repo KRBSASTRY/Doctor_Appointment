@@ -1,9 +1,8 @@
-import boto3
 from datetime import datetime
 from flask import Flask, request, jsonify
 from flask_bcrypt import Bcrypt
 import mysql.connector
-from Web_Application.AWS_deployment.Key.db_access import *
+from AWS_deployment.Key.db_access import *
 app = Flask(__name__)
 bcrypt = Bcrypt()
 
@@ -41,11 +40,11 @@ def doctor_login(login_doctor):
     # Check if the doctor is not found
     if doctor is None:
         cursor.close()
-        return jsonify({"message": "Doctor not found"}), 404
+        return jsonify({"message": "Doctor not found"}), 200
     # Check if the password is invalid
     if doctor["password"] != password:
         cursor.close()
-        return jsonify({"message": "Invalid password"}), 401
+        return jsonify({"message": "Invalid password"}), 200
     # Close the cursor
     cursor.close()
     # If the credentials are valid, return success message and doctor's information
@@ -182,6 +181,59 @@ def book_appointment(payload):
     #         cursor.close()
     #     if 'conn' in locals():
     #         conn.close()
+
+def fetch_doctor_schedule(doctor_id):
+    cur = conn.cursor()
+    current_date = datetime.now().date()
+    query = "SELECT patients.name AS patient_name,appointments.appointment_id, appointments.appointment_time, appointments.status FROM appointments INNER JOIN patients ON appointments.patient_id = patients.patient_id WHERE appointments.doctor_id = %s AND appointments.appointment_time >= %s AND appointments.status = 'confirmed'"
+    cur.execute(query, (doctor_id, current_date))
+    doctor_appointments = cur.fetchall()
+    
+    schedule = []
+    for appointment in doctor_appointments:
+        appointment_data = {
+            "patient_name": appointment[0],
+            "appointment_date": appointment[2].strftime('%Y-%m-%d'),
+            "appointment_time": appointment[2].strftime('%H:%M %p'),
+            "status": "Upcoming" if appointment[2].date() > current_date else "Completed",
+            "appointment_id":appointment[1]
+        }
+        schedule.append(appointment_data)
+    
+    return schedule
+
+def fetch_awaiting_doctor_schedule(doctor_id):
+    cur = conn.cursor()
+    current_date = datetime.now().date()
+    query = "SELECT patients.name AS patient_name,appointments.appointment_id, appointments.appointment_time, appointments.status FROM appointments INNER JOIN patients ON appointments.patient_id = patients.patient_id WHERE appointments.doctor_id = %s AND appointments.appointment_time >= %s AND appointments.status = %s"
+    cur.execute(query, (doctor_id, current_date,'pending'))
+    doctor_appointments = cur.fetchall()
+    
+    schedule = []
+    for appointment in doctor_appointments:
+        appointment_data = {
+            "patient_name": appointment[0],
+            "appointment_date": appointment[2].strftime('%Y-%m-%d'),
+            "appointment_time": appointment[2].strftime('%H:%M %p'),
+            "status": "Upcoming" if appointment[2].date() > current_date else "Completed",
+            "appointment_id":appointment[1]
+        }
+        schedule.append(appointment_data)
+    
+    return schedule
+
+
+def review_appointment_status(appointment_id,status):
+    try:
+        # Update the status field in the appointments table
+        cur = conn.cursor()
+        query = "UPDATE appointments SET status = %s WHERE appointment_id = %s"
+        cur.execute(query, (status, appointment_id))
+        conn.commit()
+        cur.close()
+        return 200, "Appointment status updated successfully"
+    except Exception as e:
+        return 500, str(e)
 
 def not_found(error):
     return jsonify({"message": f"Path {request.path} is not found"}), 404

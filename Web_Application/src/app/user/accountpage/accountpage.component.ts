@@ -12,7 +12,8 @@ import { UserService } from 'src/app/user.service';
 export class AccountpageComponent implements OnInit {
   upcomingAppointmentsData: any[] = [];
   appointmentHistoryData: any[] = [];
-  showUpcomingAppointments: boolean = true;
+  showUpcomingAppointments: boolean = false;
+  showHistory:boolean = false;
 
   constructor(private userService: UserService, private routerObj: Router) { }
 
@@ -35,9 +36,11 @@ export class AccountpageComponent implements OnInit {
   toggleView(view: string) {
     if (view === 'upcoming') {
       this.showUpcomingAppointments = true;
+      this.showHistory=false;
       this.getUpcomingAppointments();
     } else {
       this.showUpcomingAppointments = false;
+      this.showHistory=true;
       this.getAppointmentHistory();
     }
   }

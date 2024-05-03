@@ -1,0 +1,1 @@
+{"ast":null,"code":"export const environment = {\n  production: true,\n  SERVER_URL: 'http://13.59.125.149/api'\n};","map":null,"metadata":{},"sourceType":"module"}

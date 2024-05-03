@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Observable } from 'rxjs';
+
 // import { environment } from 'src/environments/environment';
 
 
@@ -18,12 +19,12 @@ export class UserService {
   }
   addUserToDatabase(userObj: any) {
     console.log(userObj);
-    return this.httpClientObj.post('http://127.0.0.1:5000/patient_signup', userObj);
+    return this.httpClientObj.post('http://ec2-18-189-180-8.us-east-2.compute.amazonaws.com/patient_signup', userObj);
   }
 
   loginUser(userObj: any): Observable<any> {
    
-    return this.httpClientObj.post('http://127.0.0.1:5000/user_login', userObj);
+    return this.httpClientObj.post('http://ec2-18-189-180-8.us-east-2.compute.amazonaws.com/user_login', userObj);
 
   }
 
@@ -40,10 +41,10 @@ export class UserService {
   }
 
   getUpcomingAppointments(): Observable<any> {
-    return this.httpClientObj.post('http://127.0.0.1:5000/upcoming_patient_appointments',this.userBehaviourSubject);
+    return this.httpClientObj.post('http://ec2-18-189-180-8.us-east-2.compute.amazonaws.com/upcoming_patient_appointments',this.userBehaviourSubject);
   }
 
   getAppointmentHistory(): Observable<any> {
-    return this.httpClientObj.post('http://127.0.0.1:5000/patient_appointments_history', this.userBehaviourSubject);
+    return this.httpClientObj.post('http://ec2-18-189-180-8.us-east-2.compute.amazonaws.com/patient_appointments_history', this.userBehaviourSubject);
   }
 }

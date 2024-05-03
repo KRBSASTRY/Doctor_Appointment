@@ -28,6 +28,11 @@
                         <a class="nav-link " routerLink="aboutus" data-bs-toggle="collapse"
                             data-bs-target=".navbar-collapse.show">About us</a>
                     </li>
+                    <li class="nav-item hover-underline-animation" *ngIf="userServiceObj.loginStatus == true">
+                        <a class="nav-link" (click)="redirectToDashboard()" data-bs-toggle="collapse"
+                            data-bs-target=".navbar-collapse.show">Dashboard</a>
+                    </li>
+                    
                     <li class="nav-item hover-underline-animation" *ngIf="userServiceObj.loginStatus == false">
                         <a class="nav-link " routerLink="login" data-bs-toggle="collapse"
                             data-bs-target=".navbar-collapse.show">Login </a>

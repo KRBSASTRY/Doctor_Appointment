@@ -1,4 +1,54 @@
-
 <div class="container">
-    <p class="text-center">Doctor Dashboard works!</p>
+    <button (click)="toggleSchedule('schedule')">My Schedule</button>
+    <button (click)="toggleSchedule('review')">Review</button>
+</div>
+<div *ngIf="showreview">
+    <h2>Review Appointments</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of pendingAppointments">
+                    <td>{{ appointment.patient_name }}</td>
+                    <td>{{ appointment.appointment_date }}</td>
+                    <td>{{ appointment.appointment_time }}</td>
+                    <td>
+                        <button class="btn btn-success" (click)="approveAppointment(appointment.appointment_id)">Approve</button>
+                        <button class="btn btn-danger" (click)="denyAppointment(appointment.appointment_id)">Deny</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="showMySchedule">
+    <h2>My Schedule</h2>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Appointment Date</th>
+                    <th>Appointment Time</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let appointment of schedule">
+                    <td>{{ appointment.patient_name }}</td>
+                    <td>{{ appointment.appointment_date }}</td>
+                    <td>{{ appointment.appointment_time }}</td>
+                    <td>{{ appointment.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

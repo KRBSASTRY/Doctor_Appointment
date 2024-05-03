@@ -45,6 +45,7 @@ export class LoginComponent implements OnInit {
           }
           else{
             console.log("Login Failed")
+            alert("Login Failed, Please Check your credentials");
             //this.routerObj.navigateByUrl("/home")
           }
         },
@@ -62,17 +63,20 @@ export class LoginComponent implements OnInit {
           {
             console.log("login success");
             this.doctorServiceObj.loginStatus =true;
+            this.userServiceObj.loginStatus =true;
+
              //local storage
             //  localStorage.setItem("token",res.token)
-            //  this.doctorServiceObj.getDoctorName().next(res.doctor)
-            //  this.userServiceObj.getUserType().next(res.doctor.userType)
+             this.doctorServiceObj.getDoctorName().next(res.doctor)
+             this.userServiceObj.getUserType().next(res.doctor.userType)
              this.routerObj.navigateByUrl(`doctordashboard`)
             
             
           }
           else{
             console.log("Login Failed")
-            //this.routerObj.navigateByUrl("/home")
+            alert("Login Failed, Please Check your credentials");
+            this.routerObj.navigateByUrl("/home")
           }
         },
         error: (err) => {

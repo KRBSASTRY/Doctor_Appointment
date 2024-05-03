@@ -12,6 +12,7 @@
                 <th>Appointment Time</th>
                 <th>Date</th>
                 <th>Doctor Specialization</th>
+                <th>Status</th>
             </tr>
         </thead>
         <tbody>
@@ -20,12 +21,13 @@
                 <td>{{ appointment.appointmentTime }}</td>
                 <td>{{ appointment.appointmentDate }}</td>
                 <td>{{ appointment.doctorSpecialization }}</td>
+                <td>{{ appointment.Status }}</td>
             </tr>
         </tbody>
     </table>
 </div>
 
-<div *ngIf="!showUpcomingAppointments" class="appointment-history">
+<div *ngIf="showHistory" class="appointment-history">
     <h2>Appointment History</h2>
     <table class="appointment-table">
         <thead>

@@ -35,6 +35,7 @@ doctorsCity: any[] = [];
 finalDoctors: any[] = [];
 //comment for doctors results
 comment: string = "";
+loading:boolean =true;
 
 
 accObj = {
@@ -48,15 +49,17 @@ accObj = {
   constructor(public serviceObj: DoctorService,public userServiceObj: UserService, public fb: FormBuilder, public activatedRouteObj: ActivatedRoute, private routerObj: Router) { }
 
   ngOnInit(): void {
-    this.getdoctor();
-    
-  }
+    this.getdoctor(); 
+    this.getCity({ target: { value: this.city[0] } });
+    this.getDataAccSpec({ target: { value: this.specialization[0] } });
+}
   
   getdoctor() {
     this.serviceObj.getDoctorList().subscribe({
       next: (obj) => {
         this.doctors = obj.payload;
         console.log("doctors list after assigning is ", this.doctors);
+        this.loading = false;
       },
       error: (err) => { console.log(err) }
     })

@@ -1,43 +1,47 @@
 from flask import Flask, request, jsonify
 from flask_bcrypt import Bcrypt
-from Web_Application.AWS_deployment.Key.db_access import *
+from AWS_deployment.Key.db_access import *
 from datetime import datetime
 app = Flask(__name__)
 bcrypt = Bcrypt()
 
 def create_user(new_user):
     # Check if the username already exists in the database
-    cursor = conn.cursor()
-    cursor.execute("SELECT * FROM patients WHERE username = %s", (new_user["username"],))
-    user = cursor.fetchone()
-    if user:
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM patients WHERE username = %s", (new_user["username"],))
+        user = cursor.fetchone()
+        if user:
+            cursor.close()
+            return jsonify({"message": "Username already exists"}), 400
+        # Insert the new user record into the patients table
+        cursor.execute("INSERT INTO patients (username, password, email, city, phoneno, age, name) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                    (new_user["username"], new_user["password"], new_user["email"], new_user["city"], new_user["phoneno"], new_user["age"], new_user["name"]))
+        conn.commit()
+
+        # Get the inserted user's ID
+        new_user_id = cursor.lastrowid
+
+        # Close the cursor
         cursor.close()
-        return jsonify({"message": "Username already exists"}), 400
-    # Insert the new user record into the patients table
-    cursor.execute("INSERT INTO patients (username, password, email, city, phoneno, age, name) VALUES (%s, %s, %s, %s, %s, %s, %s)",
-                   (new_user["username"], new_user["password"], new_user["email"], new_user["city"], new_user["phoneno"], new_user["age"], new_user["name"]))
-    conn.commit()
+    
+        # Return success message and inserted user record
+        new_user["_id"] = new_user_id
 
-    # Get the inserted user's ID
-    new_user_id = cursor.lastrowid
+        patient_record = {
+            "PatientID":str(new_user_id),
+            "username": new_user["username"],
+            "bp": new_user.get("bp", ""),
+            "diabetes": new_user.get("diabetes", ""),
+            "height": new_user.get("height", ""),
+            "weight": new_user.get("weight", ""),
+            "age": new_user.get("age", "")
+        }
+        patients_record_table.put_item(Item=patient_record)
+        return jsonify({"message": "User created", "payload": new_user}), 200
+    except Exception as e:
+        return jsonify({"message": e, "payload": ""}), 200
 
-    # Close the cursor
-    cursor.close()
-
-    # Return success message and inserted user record
-    new_user["_id"] = new_user_id
-
-    patient_record = {
-        "PatientID":str(new_user_id),
-        "username": new_user["username"],
-        "bp": new_user.get("bp", ""),
-        "diabetes": new_user.get("diabetes", ""),
-        "height": new_user.get("height", ""),
-        "weight": new_user.get("weight", ""),
-        "age": new_user.get("age", "")
-    }
-    patients_record_table.put_item(Item=patient_record)
-    return jsonify({"message": "User created", "payload": new_user}), 200
 
 
 def user_login(login_user):
@@ -53,12 +57,12 @@ def user_login(login_user):
     # Check if the user is not found
     if user is None:
         cursor.close()
-        return jsonify({"message": "User not found"}), 404
+        return jsonify({"message": "User not found"}), 200
 
     # Check if the password is invalid
     if user["password"] != password:
         cursor.close()
-        return jsonify({"message": "Invalid password"}), 401
+        return jsonify({"message": "Invalid password"}), 200
 
     # Close the cursor
     cursor.close()
@@ -86,9 +90,9 @@ def upcoming_appointments(data):
     try:
         cursor = conn.cursor(dictionary=True)
         current_date = datetime.now()
-        cursor.execute("SELECT a.appointment_time as appointmentTime, d.name AS doctorName, d.specialization as doctorSpecialization FROM appointments a\
+        cursor.execute("SELECT a.appointment_time as appointmentTime, d.name AS doctorName, d.specialization as doctorSpecialization , a.status as Status FROM appointments a\
             INNER JOIN doctors d ON a.doctor_id = d.doctor_id\
-            WHERE a.patient_id = %s AND a.appointment_time >= NOW()", (data["_value"]['patient_id'], ))
+            WHERE a.patient_id = %s AND a.appointment_time >= NOW() ", (data["_value"]['patient_id'], ))
         appointments = cursor.fetchall()
         cursor.close()
         for appointment in appointments:
