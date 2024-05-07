@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.DoctorDashboard"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame"
+    android:background="#FFF9C4">
+
+
+<TextView
+    android:id="@+id/ramMedicalApplication"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_centerHorizontal="true"
+    android:text="MEDI CARE"
+    android:textSize="32sp"
+    android:textColor="#000000" />
+
+
+<TextView
+    android:id="@+id/hi"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/ramMedicalApplication"
+    android:text="Hi Doctor !"
+    android:layout_centerHorizontal="true"
+    android:textSize="20sp"
+    android:layout_marginTop="20dp"
+    android:textColor="#000000"
+    ></TextView>
+    <!-- Schedule Button Placeholder -->
+<Button
+    android:id="@+id/schedule"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/hi"
+    android:layout_marginTop="50dp"
+    android:text="Upcoming Appointments"
+    android:background="@android:color/holo_blue_light"
+    android:layout_centerHorizontal="true"/>
+
+<Button
+    android:id="@+id/HISTORY"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/schedule"
+    android:layout_marginTop="50dp"
+    android:text="Review Pending Appointments"
+    android:background="@android:color/holo_red_light"
+    android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>

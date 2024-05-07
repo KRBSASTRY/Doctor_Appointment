@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.Signup"
+    android:background="#FFF9C4">
+
+    <TextView
+        android:id="@+id/tvRamMedicalApplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        android:text="MEDI CARE"
+        android:textColor="#000000"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/tvSignUpHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRamMedicalApplication"
+        android:text="PATIENT SIGN UP"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"/>
+
+    <!-- Enter Name -->
+    <EditText
+        android:id="@+id/etEnterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:textColorHint="#000000"
+        android:layout_below="@id/tvSignUpHeader"
+        android:layout_marginTop="5dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Email -->
+    <EditText
+        android:id="@+id/etEnterEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Email"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterName"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Phone Number -->
+    <EditText
+        android:id="@+id/etEnterPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Phone No."
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterEmail"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Username -->
+    <EditText
+        android:id="@+id/etEnterUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter User Name"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterPhoneNumber"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Password -->
+    <EditText
+        android:id="@+id/etEnterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Password"
+        android:textColorHint="#000000"
+        android:inputType="textPassword"
+        android:layout_below="@id/etEnterUserName"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Additional Fields -->
+    <!-- Enter Age -->
+    <EditText
+        android:id="@+id/etEnterAge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Age"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterPassword"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter City -->
+    <EditText
+        android:id="@+id/etEnterCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter City"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterAge"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Blood Pressure -->
+    <EditText
+        android:id="@+id/etEnterBP"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Blood Pressure"
+        android:layout_below="@id/etEnterCity"
+        android:layout_marginTop="0dp"
+        android:textColorHint="#000000"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Diabetes -->
+    <EditText
+        android:id="@+id/etEnterDiabetes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Diabetes"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterBP"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Height -->
+    <EditText
+        android:id="@+id/etEnterHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Height"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterDiabetes"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Weight -->
+    <EditText
+        android:id="@+id/etEnterWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Weight"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterHeight"
+        android:layout_marginTop="0dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEnterWeight"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginHorizontal="20dp"
+        android:text="REGISTER" />
+
+</RelativeLayout>

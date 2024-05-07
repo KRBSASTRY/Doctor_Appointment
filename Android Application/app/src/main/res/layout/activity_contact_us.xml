@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.ContactUs"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame"
+    android:fillViewport="true"
+    android:background="#FFF9C4">
+
+
+    <TextView
+        android:id="@+id/ramMedicalApplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="MEDI CARE"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="32sp" />
+
+    <!-- CONTACT US Header -->
+    <TextView
+android:layout_below="@id/ramMedicalApplication"
+        android:id="@+id/ContactUs"
+        android:layout_width="wrap_content"
+        android:textColor="#000000"
+        android:layout_height="wrap_content"
+        android:text="CONTACT US"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:layout_gravity="center_horizontal"
+       />
+
+    <!-- Call Us Section -->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:gravity="center_vertical"-->
+    <!--            android:marginBottom="16dp">-->
+
+
+    <TextView
+        android:id="@+id/callus"
+        android:layout_below="@id/ContactUs"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="CALL US"
+/>
+    <TextView
+        android:layout_below="@id/callus"
+        android:id="@+id/phno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="+ 1 305 326 6000"
+/>
+
+    <!-- Location Section -->
+    <!--        <LinearLayout-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:orientation="horizontal"-->
+    <!--            android:gravity="center_vertical"-->
+    <!--            android:marginBottom="16dp">-->
+
+    <TextView
+        android:id="@+id/location"
+android:layout_below="@id/phno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#000000"
+        android:text="location"
+/>
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/location"
+        android:text="Azuria Life, 42 rue Monge, 75005, Maryland"
+        android:layout_marginTop="20dp"
+        android:textColor="#000000"/>
+
+    <!-- Business Hours -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/address"
+        android:layout_marginTop="50dp"
+        android:text="Business Hours: Monday - Friday 09:00 - 18:00\nFrance Standard Time (GMT+1)"
+        android:textColor="#000000"/>
+
+</RelativeLayout>

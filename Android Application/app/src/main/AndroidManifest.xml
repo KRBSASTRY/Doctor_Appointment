@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:banner="@drawable/app_icon_your_company"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MediCare"
+        tools:targetApi="31">
+        <activity
+            android:name=".activities.AppointmentReview"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DoctorSchedule"
+            android:exported="false" />
+        <activity
+            android:name=".activities.patient_upcoming_appointments"
+            android:exported="false" />
+        <activity
+            android:name=".activities.patient_Appointment_History"
+            android:exported="false" />
+        <activity
+            android:name=".doctor_item"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Appointment_date_time"
+            android:exported="false" />
+        <activity
+            android:name=".activities.BookAppointment"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DoctorSignup"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".activities.PatientSignup" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".activities.PatientSignup"
+            android:exported="false"
+
+            android:theme="@style/Theme.MediCare" />
+        <activity
+            android:name=".activities.home"
+            android:banner="@drawable/logo"
+            android:exported="true"
+            android:icon="@drawable/logo"
+            android:label="@string/title_activity_home"
+            android:logo="@drawable/logo"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity3"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PatientRecovery"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_patient_recovery"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity12"
+            android:exported="false" />
+        <activity
+            android:name=".PlaybackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BrowseErrorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activities.DoctorDashboard"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_doctor_dashboard"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity11"
+            android:exported="false" />
+        <activity
+            android:name=".activities.RegistrationSuccess"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_registration_success"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity10"
+            android:exported="false" />
+        <activity
+            android:name=".activities.Signup"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_signup"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity9"
+            android:exported="false" />
+        <activity
+            android:name=".activities.ContactUs"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_contact_us"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity8"
+            android:exported="false" />
+        <activity
+            android:name=".activities.PasswordUpdateSuccess"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_password_update_success"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity7"
+            android:exported="false" />
+        <activity
+            android:name=".activities.AboutUs"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_about_us"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity6"
+            android:exported="false" />
+        <activity
+            android:name=".activities.patient_dashboard"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_patient_dashboard"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity5"
+            android:exported="false" />
+        <activity
+            android:name=".activities.doctor_login"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_doctor_login"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity4"
+            android:exported="false" />
+        <activity
+            android:name=".activities.patient_login"
+            android:banner="@drawable/app_icon_your_company"
+            android:exported="true"
+            android:icon="@drawable/app_icon_your_company"
+            android:label="@string/title_activity_patient_login"
+            android:logo="@drawable/app_icon_your_company"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailsActivity2"
+            android:exported="false" />
+        <activity
+            android:name=".DetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:resizeableActivity="true"
+            android:theme="@style/Theme.MediCare.NoActionBar"
+            tools:targetApi="24">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

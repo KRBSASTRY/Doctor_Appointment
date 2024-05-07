@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.AboutUs"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame"
+    android:fillViewport="true"
+    android:background="#FFF9C4">
+
+
+    <!-- ABOUT US Header -->
+    <TextView
+        android:id="@+id/ramMedicalApplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="MEDI CARE"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/aboutUs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ABOUT US"
+        android:layout_below="@id/ramMedicalApplication"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:textAlignment="center"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <!-- Detailed Text -->
+    <TextView
+        android:id="@+id/Content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/aboutUs"
+        android:text="Medi care is on a mission to make quality healthcare affordable and accessible for over a billion+ Indians.
+We believe in empowering our users with the most accurate, comprehensive, and curated information and care, enabling them to make better healthcare decisions."
+        android:textColor="#000000"
+        android:textSize="16sp"
+        android:layout_marginTop="50dp"
+        android:textAlignment="center"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"/>
+
+    <!-- Contact Button, Replace with Actual Functionality -->
+    <Button
+        android:layout_below="@id/Content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Contact Us"
+        android:layout_gravity="center"
+        android:onClick="onContactUsClicked"
+        android:layout_centerHorizontal="true"/>
+</RelativeLayout>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_browse_fragment"
+    tools:context=".activities.doctor_login"
+    tools:deviceIds="tv"
+    tools:ignore="MergeRootFrame" >
+
+    <TextView
+        android:id="@+id/doctorsLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="Doctor’s Login"
+        android:textColor="#000000"
+        android:textSize="32sp"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/userName"
+        android:layout_width="227dp"
+        android:layout_height="56dp"
+        android:layout_below="@id/doctorsLogin"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:background="#D9D9D9"
+        android:gravity="center"
+        android:hint="User Name"
+        android:textColorHint="#000000"
+        android:textSize="24sp"
+        android:textColor="#000000"/>
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="221dp"
+        android:layout_height="52dp"
+        android:layout_below="@id/userName"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="#D9D9D9"
+        android:gravity="center"
+        android:textColorHint="#000000"
+        android:hint="Password"
+        android:textSize="24sp"
+        android:textColor="#000000"/>
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Remember"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/loginButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rememberMe"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="LOGIN" />
+
+    <Button
+        android:id="@+id/signupButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loginButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="SIGNUP" />
+
+    <Button
+        android:id="@+id/forgotPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/signupButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="FORGOT PASSWORD" />
+
+</RelativeLayout>

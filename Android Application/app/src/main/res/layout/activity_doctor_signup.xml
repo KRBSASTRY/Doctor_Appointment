@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF9C4">
+
+    <!-- RAM MEDICAL APPLICATION Header -->
+    <TextView
+        android:id="@+id/tvRamMedicalApplication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MEDI CARE"
+        android:textSize="32sp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+    <TextView
+        android:id="@+id/tvSignUpHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvRamMedicalApplication"
+        android:text="DOCTOR SIGN UP"
+        android:textSize="24sp"
+        android:textColor="#000000"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"/>
+
+    <!-- Enter Name -->
+    <EditText
+        android:id="@+id/etEnterName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textColorHint="#000000"
+        android:layout_below="@id/tvSignUpHeader"
+        android:layout_marginTop="20dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Username -->
+    <EditText
+        android:id="@+id/etEnterUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterName"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Password -->
+    <EditText
+        android:id="@+id/etEnterPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password"
+        android:textColorHint="#000000"
+        android:inputType="textPassword"
+        android:layout_below="@id/etEnterUserName"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Specialization -->
+    <EditText
+        android:id="@+id/etEnterSpecialization"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Specialization"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterPassword"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter City -->
+    <EditText
+        android:id="@+id/etEnterCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="City"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterSpecialization"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Phone Number -->
+    <EditText
+        android:id="@+id/etEnterPhoneNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Phone Number"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterCity"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Consultation Fee -->
+    <EditText
+        android:id="@+id/etEnterConsultationFee"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Consultation Fee"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterPhoneNumber"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Enter Experience -->
+    <EditText
+        android:id="@+id/etEnterExperience"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Experience (years)"
+        android:textColorHint="#000000"
+        android:layout_below="@id/etEnterConsultationFee"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="20dp"/>
+
+    <!-- Register Button -->
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/etEnterExperience"
+        android:layout_marginTop="20dp"
+        android:text="REGISTER"
+
+        android:layout_centerHorizontal="true"
+        />
+</RelativeLayout>
